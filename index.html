@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <p class="eyebrow">Account setup</p>
+      <h1>Create your account</h1>
+      <p class="subtitle">
+        Fill in your details below. Fields marked with an asterisk are required.
+      </p>
+
+      <div class="card">
+        <div class="progress-section" aria-live="polite">
+          <div class="progress-header">
+            <span class="progress-label" id="progress-label"
+              >Profile completeness</span
+            >
+            <span class="progress-value" aria-labelledby="progress-label"
+              >50%</span
+            >
+          </div>
+          <div
+            class="progress-track"
+            role="progressbar"
+            aria-valuenow="50"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-labelledby="progress-label">
+            <span class="progress-segment is-complete"></span>
+            <span class="progress-segment is-complete"></span>
+            <span class="progress-segment"></span>
+            <span class="progress-segment"></span>
+          </div>
+        </div>
+
+        <form novalidate>
+          <div class="field">
+            <label for="fullName"
+              >Full name<span class="required-mark" aria-hidden="true"
+                >*</span
+              ></label
+            >
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Chibuikem Okoli"
+              autocomplete="name"
+              required
+              aria-required="true"
+              aria-invalid="false"
+              aria-describedby="fullName-error" />
+            <p class="error-message" id="fullName-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="email"
+              >Email address<span class="required-mark" aria-hidden="true"
+                >*</span
+              ></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="name@example.com"
+              autocomplete="email"
+              required
+              aria-required="true"
+              aria-invalid="false"
+              aria-describedby="email-error" />
+            <p class="error-message" id="email-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="password"
+              >Password<span class="required-mark" aria-hidden="true"
+                >*</span
+              ></label
+            >
+            <div class="password-wrap">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter a password"
+                autocomplete="new-password"
+                required
+                aria-required="true"
+                aria-invalid="false"
+                aria-describedby="password-hint password-error" />
+              <button
+                type="button"
+                class="toggle-visibility"
+                aria-pressed="false"
+                data-target="password">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span class="visually-hidden"
+                  >Password is hidden. Show password</span
+                >
+              </button>
+            </div>
+            <p class="hint" id="password-hint">
+              At least 8 characters, including a number and a symbol.
+            </p>
+            <p class="error-message" id="password-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="confirmPassword"
+              >Confirm password<span class="required-mark" aria-hidden="true"
+                >*</span
+              ></label
+            >
+            <div class="password-wrap">
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Re-enter your password"
+                autocomplete="new-password"
+                required
+                aria-required="true"
+                aria-invalid="false"
+                aria-describedby="confirmPassword-error" />
+              <button
+                type="button"
+                class="toggle-visibility"
+                aria-pressed="false"
+                data-target="confirmPassword">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span class="visually-hidden"
+                  >Password is hidden. Show password</span
+                >
+              </button>
+            </div>
+            <p
+              class="error-message"
+              id="confirmPassword-error"
+              role="alert"></p>
+          </div>
+
+          <div class="checklist-section">
+            <p class="checklist-title">Requirements</p>
+            <ul class="checklist">
+              <li class="checklist-item is-met">
+                <span class="check-indicator">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#0E211D"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                Full name entered
+              </li>
+              <li class="checklist-item is-met">
+                <span class="check-indicator">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#0E211D"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                Valid email address
+              </li>
+              <li class="checklist-item">
+                <span class="check-indicator">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#0E211D"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                Password meets strength requirements
+              </li>
+              <li class="checklist-item">
+                <span class="check-indicator">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#0E211D"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                Passwords match
+              </li>
+            </ul>
+          </div>
+
+          <button type="submit" class="submit-btn">Create account</button>
+        </form>
+
+        <p class="signin-link">
+          Already have an account? <a href="#">Sign in</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
